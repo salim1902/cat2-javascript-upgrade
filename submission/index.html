@@ -43,8 +43,19 @@
                     <p>At Plated by Hilwa, we are dedicated to crafting premium culinary experiences. Every dish is prepared with meticulous care, utilizing only the freshest, high-quality ingredients to serve authentic flavors right to your doorstep or event venue.</p>
                     <p>Whether you are hosting an intimate family gathering, celebrating a milestone, or coordinating event catering, we ensure your meals are stunningly presented and packed with warmth and flavor.</p>
                 </div>
-                <div class="about-image-box">
-                    <img src="images/banner.jpg" alt="Exquisitely arranged Swahili delicacies platter" class="about-img">
+
+                <!--
+                    FEATURE 5: Click-to-reveal banner
+                    The image and the caption are wrapped together so the caption
+                    can be positioned over/under the image with CSS.
+                    Clicking #bannerImage toggles the "caption-visible" class on
+                    #bannerCaption (see js/script.js).
+                -->
+                <div class="about-image-box" id="bannerWrapper">
+                    <img src="images/banner.jpg" alt="Exquisitely arranged Swahili delicacies platter" class="about-img" id="bannerImage">
+                    <div class="banner-caption" id="bannerCaption">
+                        <p>Every platter is plated fresh — click to close.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -136,6 +147,66 @@
             </div>
         </section>
 
+            <!-- FEATURE 1: Loop-rendered dynamic content -->
+        <section id="specials" class="specials-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Today's Specials</h2>
+                    <p class="section-subtitle">Rotating favourites, rendered fresh by JavaScript</p>
+                    <hr class="accent-line">
+                </div>
+                <div class="specials-grid" id="specials-container">
+                    <!-- specials cards are injected here by script.js -->
+                </div>
+            </div>
+        </section>
+<!--  FEATURE 2 + FEATURE 4: Add/remove wishlist with localStorage -->
+        <section id="wishlist" class="wishlist-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Build Your Order Wishlist</h2>
+                    <p class="section-subtitle">Add the treats you want to order, remove any you change your mind about</p>
+                    <hr class="accent-line">
+                </div>
+
+                <div class="wishlist-form">
+                    <input type="text" id="wishlist-input" placeholder="e.g. Chocolate Honeycomb Bread">
+                    <button type="button" id="wishlist-add-btn">Add to Wishlist</button>
+                </div>
+
+                <ul class="wishlist-list" id="wishlist-list">
+                    <!-- wishlist <li> items are injected here by script.js -->
+                </ul>
+                <p class="wishlist-empty-msg" id="wishlist-empty-msg">Your wishlist is empty. Add something above!</p>
+            </div>
+        </section>
+
+            <!-- FEATURE 3: Form handling with validation feedback -->
+        <section id="inquiry" class="inquiry-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Request a Quote</h2>
+                    <p class="section-subtitle">Tell us about your event and we'll get back to you</p>
+                    <hr class="accent-line">
+                </div>
+
+                <form id="inquiry-form" class="inquiry-form">
+                    <label for="inquiry-name">Full Name</label>
+                    <input type="text" id="inquiry-name" placeholder="Your name">
+
+                    <label for="inquiry-email">Email Address</label>
+                    <input type="text" id="inquiry-email" placeholder="you@example.com">
+
+                    <label for="inquiry-guests">Estimated Number of Guests</label>
+                    <input type="text" id="inquiry-guests" placeholder="e.g. 50">
+
+                    <button type="submit">Submit Inquiry</button>
+
+                    <p id="form-feedback" class="form-feedback"></p>
+                </form>
+            </div>
+        </section>
+
         <!-- Ordering & Contact Section -->
         <section id="ordering" class="ordering-section">
             <div class="section-container">
@@ -162,5 +233,6 @@
         </div>
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
