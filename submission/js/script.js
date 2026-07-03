@@ -1,9 +1,10 @@
-/* ============================================================
+/* 
    Plated by Hilwa — script.js
    FEATURE 1: Loop-rendered dynamic content
-   FEATURE 2 + 4: Add/remove wishlist with localStorage
-   FEATURE 3: Form handling with validation feedback
-   ============================================================ */
+   FEATURE 2 + 3: Add/remove wishlist
+   FEATURE 4: Inquiry form
+   FEATURE 5: Click-to-reveal on the banner image
+*/
 
 const specials = [
     { name: "Pistachio Honeycomb Bread", description: "Our signature honeycomb bread, drizzled with pistachio cream.", price: "Ksh 2,500" },
@@ -39,7 +40,7 @@ function renderSpecials() {
 }
 
 
-/*Wishlist (Feature 2 + 4)*/
+/*Wishlist (Feature 2 + 3)*/
 
 const WISHLIST_STORAGE_KEY = "platedByHilwaWishlist";
 let wishlistItems = [];
@@ -145,6 +146,18 @@ function setupInquiryForm() {
 }
 
 
+/*Banner(Feature 5)*/
+
+function setupBannerReveal() {
+    const banner = document.getElementById("bannerImage");
+    const caption = document.getElementById("bannerCaption");
+
+    banner.addEventListener("click", function () {
+        caption.classList.toggle("caption-visible");
+    });
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     renderSpecials();
 
@@ -153,4 +166,5 @@ document.addEventListener("DOMContentLoaded", function () {
     setupWishlistForm();
 
     setupInquiryForm();
+    setupBannerReveal();
 });
