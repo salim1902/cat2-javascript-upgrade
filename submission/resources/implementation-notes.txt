@@ -1,0 +1,23 @@
+Plated by Hilwa
+
+1. LOOP-RENDERED CONTENT (Today's Specials)
+An array of objects (name, description, price) is looped with forEach()
+in renderSpecials(). Each object is turned into a card using
+createElement()/appendChild() and inserted into #specials-container.
+
+2 & 3. ADD & REMOVE ELEMENTS
+wishlistItems is a plain array. Adding a name (via .value on the input)
+pushes to the array; renderWishlist() rebuilds the <ul> from it using
+createElement(). Each item gets its own Remove button that deletes just
+that entry with splice(index, 1) and re-renders.
+
+4. Inquiry form
+event.preventDefault() stops the page reload on submit. Name, email, and
+guest count are read with .value and checked in order (empty name, missing
+"@", non-numeric guests). Errors or a success message are written into
+#form-feedback with textContent, styled via feedback-error/success classes.
+
+
+5. CLICK-TO-REVEAL (Banner)
+Clicking #bannerImage runs classList.toggle("caption-visible") on the
+hidden caption div, showing/hiding it.
